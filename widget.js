@@ -1423,6 +1423,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 if (this.isAAxisShowing) {
                     cmd += " A0";
                 }
+                if (this.isBAxisShowing) {
+                    cmd += " B0";
+                }
+                if (this.isCAxisShowing) {
+                    cmd += " C0";
+                }
             } else {
                 cmd += evt.data.toUpperCase() + "0";
             }
