@@ -36,12 +36,16 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: 10.46,
                 z: 0.304,
                 a: 0,
+                b: 0,
+                c: 0,
                 type: "work",
                 mpo: {
                     x: 0.005,
                     y: 10.46,
                     z: 0.304,
                     a: 0,
+                    b: 0,
+                    c: 0,
                     type: "machine"
                 }
             });
@@ -52,6 +56,8 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: 0.028,
                 z: 0.01,
                 a: 0,
+                b: 0,
+                c: 0,
                 type: "work"
             });
         }, 2000);
@@ -61,6 +67,8 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: -0,
                 z: 1.12,
                 a: null,
+                b: null,
+                c: null,
                 type: "work"
             });
         }, 3000);
@@ -71,6 +79,8 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: null,
                 z: 1.12,
                 a: null,
+                b: null,
+                c: null,
                 type: "work"
             });
         }, 4000);
@@ -80,6 +90,8 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: 32.424,
                 z: -3.424,
                 a: null,
+                b: null,
+                c: null,
                 type: "work"
             });
         }, 5000);
@@ -89,6 +101,8 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 y: 132.424,
                 z: -3.424,
                 a: null,
+                c: null,
+                b: null,
                 type: "work"
             });
         }, 5000);
