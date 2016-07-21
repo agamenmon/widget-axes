@@ -1225,6 +1225,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         },
         updateAxesFromStatus: function (axes) {
             console.log("updateAxesFromStatus:", axes);
+            console.log("-------------AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            console.dir(axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
