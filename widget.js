@@ -168,15 +168,15 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "(auto fill by runme.js)", // The backing github repo
         testurl: "(auto fill by runme.js)",   // The standalone working widget so can view it working by itself
-        name: "Widget / XYZ Axes",
-        desc: "The Axes widget shows the XYZA values of the axes of your CNC controller. It also enables you to jog, home, change units, and change Work Coordinate Systems.",
+        name: "Widget / XYZABC Axes",
+        desc: "The Axes widget shows the XYZABC values of the axes of your CNC controller.",
         publish: {},
         subscribe: {},
         foreignPublish: {
             '/com-chilipeppr-widget-serialport/send': "We publish to the serial port Gcode jog commands"
         },
         foreignSubscribe: {
-            "/com-chilipeppr-interface-cnccontroller/axes": "We want X,Y,Z,A,MX,MY,MZ,MA axis updates.",
+            "/com-chilipeppr-interface-cnccontroller/axes": "We want X,Y,Z,A,B,C,MX,MY,MZ,MA,MB,MC axis updates.",
                 "/com-chilipeppr-interface-cnccontroller/coords": "Track which is active: G54, G55, etc.",
                 "/com-chilipeppr-interface-cnccontroller/plannerpause": "We need to know when to pause sending jog cmds.",
                 "/com-chilipeppr-interface-cnccontroller/plannerresume": "We need to know when to resume jog cmds.",
