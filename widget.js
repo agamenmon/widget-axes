@@ -1463,7 +1463,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             console.log(cmd);
             //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", cmd);
             this.publishSend(cmd);
-            
         },
         zeroOutAxisG28: function (evt) {
             console.log("zeroOutAxis28. evt.data:", evt.data, "evt:", evt);
