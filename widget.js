@@ -1446,6 +1446,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 if (this.isAAxisShowing) {
                     cmd += ' A' + (this.lastVal.ma);
                 }
+                if (this.isBAxisShowing) {
+                    cmd += ' B' + (this.lastVal.ma);
+                }
+                if (this.isCAxisShowing) {
+                    cmd += ' C' + (this.lastVal.ma);
+                }
             } else {
                 cmd += 'G10 L2 P' + (this.lastCoords.coordNum - 53) + evt.data.substr(-1).toUpperCase() + (this.lastVal[evt.data]);
             }
@@ -1463,6 +1469,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 if (this.isAAxisShowing) {
                     cmd += " A0";
                 }
+                if (this.isBAxisShowing) {
+                    cmd += " B0";
+                }
+                if (this.isCAxisShowing) {
+                    cmd += " C0";
+                }
             } else {
                 cmd += evt.data.toUpperCase() + "0";
             }
@@ -1478,6 +1490,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 cmd += "X0 Y0 Z0";
                 if (this.isAAxisShowing) {
                     cmd += " A0";
+                }
+                if (this.isBAxisShowing) {
+                    cmd += " B0";
+                }
+                if (this.isCAxisShowing) {
+                    cmd += " C0";
                 }
             } else {
                 cmd += evt.data.toUpperCase() + "0";
@@ -1495,6 +1513,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 cmd += "X0 Y0 Z0";
                 if (this.isAAxisShowing) {
                     cmd += " A0";
+                }
+                if (this.isBAxisShowing) {
+                    cmd += " B0";
+                }
+                if (this.isCAxisShowing) {
+                    cmd += " C0";
                 }
             } else {
                 cmd += evt.data.toUpperCase() + "0";
@@ -1514,6 +1538,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 cmd += "X0 Y0 Z0";
                 if (this.isAAxisShowing) {
                     cmd += " A0";
+                }
+                if (this.isBAxisShowing) {
+                    cmd += " B0";
+                }
+                if (this.isCAxisShowing) {
+                    cmd += " C0";
                 }
             } else {
                 cmd += evt.data.toUpperCase() + "0";
