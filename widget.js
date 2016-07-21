@@ -257,6 +257,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             $('#com-chilipeppr-widget-xyz-y').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
             $('#com-chilipeppr-widget-xyz-z').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
             $('#com-chilipeppr-widget-xyz-a').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
+			$('#com-chilipeppr-widget-xyz-b').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
+			$('#com-chilipeppr-widget-xyz-c').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
         },
         pencilOnMouseover: function(evt) {
             console.log("got pencilOnMouseover. evt:", evt);
@@ -337,12 +339,15 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             // by default we'll show the A/B/C axes
             $('#com-chilipeppr-widget-xyz-a').removeClass("hidden");
             $('#com-chilipeppr-widget-xyz-b').removeClass("hidden");
+            $('#com-chilipeppr-widget-xyz-c').removeClass("hidden");
             // change labels
-            $('#com-chilipeppr-widget-xyz-a .com-chilipeppr-xyz-label').text("E0");
-            $('#com-chilipeppr-widget-xyz-b .com-chilipeppr-xyz-label').text("E1");
+            $('#com-chilipeppr-widget-xyz-a .com-chilipeppr-xyz-label').text("A");
+            $('#com-chilipeppr-widget-xyz-b .com-chilipeppr-xyz-label').text("B");
+            $('#com-chilipeppr-widget-xyz-c .com-chilipeppr-xyz-label').text("C");
             // change units
             $('#com-chilipeppr-widget-xyz-a .com-chilipeppr-xyz-dim').text("mm");
             $('#com-chilipeppr-widget-xyz-b .com-chilipeppr-xyz-dim').text("mm");
+            $('#com-chilipeppr-widget-xyz-c .com-chilipeppr-xyz-dim').text("mm");
 
         },
         setupShowHideWcsBtn: function () {
@@ -1136,6 +1141,18 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 negpos: $('#com-chilipeppr-widget-xyz-a .xyz-negpos'),
                 decimal: $('#com-chilipeppr-widget-xyz-a .xyz-decimal')
             };
+            this.axisb = {
+                intblack: $('#com-chilipeppr-widget-xyz-b .xyz-intblack'),
+                intgray: $('#com-chilipeppr-widget-xyz-b .xyz-intgray'),
+                negpos: $('#com-chilipeppr-widget-xyz-b .xyz-negpos'),
+                decimal: $('#com-chilipeppr-widget-xyz-b .xyz-decimal')
+            };
+            this.axisc = {
+                intblack: $('#com-chilipeppr-widget-xyz-c .xyz-intblack'),
+                intgray: $('#com-chilipeppr-widget-xyz-c .xyz-intgray'),
+                negpos: $('#com-chilipeppr-widget-xyz-c .xyz-negpos'),
+                decimal: $('#com-chilipeppr-widget-xyz-c .xyz-decimal')
+            };
             this.axismx = {
                 intblack: $('#com-chilipeppr-widget-xyz-mx .xyz-intblack'),
                 intgray: $('#com-chilipeppr-widget-xyz-mx .xyz-intgray'),
@@ -1160,15 +1177,32 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 negpos: $('#com-chilipeppr-widget-xyz-ma .xyz-negpos'),
                 decimal: $('#com-chilipeppr-widget-xyz-ma .xyz-decimal')
             };
+            
+            this.axismb = {
+                intblack: $('#com-chilipeppr-widget-xyz-mb .xyz-intblack'),
+                intgray: $('#com-chilipeppr-widget-xyz-mb .xyz-intgray'),
+                negpos: $('#com-chilipeppr-widget-xyz-mb .xyz-negpos'),
+                decimal: $('#com-chilipeppr-widget-xyz-mb .xyz-decimal')
+            };
+            this.axismc = {
+                intblack: $('#com-chilipeppr-widget-xyz-mc .xyz-intblack'),
+                intgray: $('#com-chilipeppr-widget-xyz-mc .xyz-intgray'),
+                negpos: $('#com-chilipeppr-widget-xyz-mc .xyz-negpos'),
+                decimal: $('#com-chilipeppr-widget-xyz-mc .xyz-decimal')
+            };
             this.axes = {
                 x: this.axisx,
                 y: this.axisy,
                 z: this.axisz,
                 a: this.axisa,
+                b: this.axisb,
+                c: this.axisc,
                 mx: this.axismx,
                 my: this.axismy,
                 mz: this.axismz,
-                ma: this.axisma
+                ma: this.axisma,
+                mb: this.axismb,
+                mc: this.axismc
             };
         },
         updateAxesFromStatus: function (axes) {
@@ -1184,6 +1218,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             }
             if ('a' in axes && axes.a !== null) {
                 this.updateAxis("a", axes.a);
+            }
+            if ('b' in axes && axes.b !== null) {
+                this.updateAxis("b", axes.b);
+            }
+            if ('c' in axes && axes.c !== null) {
+                this.updateAxis("c", axes.c);
             }
             if ('mpo' in axes) {
                 axes = axes.mpo;
@@ -1202,6 +1242,12 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 if ('a' in axes && axes.a !== null) {
                     this.updateAxis("ma", this.round(axes.a * scale, 4));
                 }
+                if ('b' in axes && axes.b !== null) {
+                    this.updateAxis("mb", this.round(axes.b * scale, 4));
+                }
+                if ('c' in axes && axes.c !== null) {
+                    this.updateAxis("mc", this.round(axes.c * scale, 4));
+                }
             }
         },
 
@@ -1211,10 +1257,14 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             y: 0,
             z: 0,
             a: 0,
+            b: 0,
+            c: 0,
             mx: 0,
             my: 0,
             mz: 0,
-            ma: 0
+            ma: 0,
+            mb: 0,
+            mc: 0
         },
         updateAxis: function (axis, val) {
             console.log("updateAxis. axis:", axis, "val:", val);
@@ -1269,49 +1319,70 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             $('#com-chilipeppr-widget-xyz .xyz-showa').click(this.showHideAxisA.bind(this));
             $('#com-chilipeppr-widget-xyz .showhideaaxis').click(this.showHideAxisA.bind(this));
             $('#com-chilipeppr-widget-xyz .showhidemDRO').click(this.showHidemDRO.bind(this));
+            
+            $('#com-chilipeppr-widget-xyz .xyz-showb').click(this.showHideAxisB.bind(this));
+            $('#com-chilipeppr-widget-xyz .showhidebaxis').click(this.showHideAxisB.bind(this));
+            $('#com-chilipeppr-widget-xyz .showhidemDRO').click(this.showHidemDRO.bind(this));
+            
+            $('#com-chilipeppr-widget-xyz .xyz-showc').click(this.showHideAxisC.bind(this));
+            $('#com-chilipeppr-widget-xyz .showhidecaxis').click(this.showHideAxisC.bind(this));
+            $('#com-chilipeppr-widget-xyz .showhidemDRO').click(this.showHidemDRO.bind(this));
+            
 
             // Setup zeroing G92 - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(0).click("x", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(0).click("y", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(0).click("z", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(0).click("a", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(0).click("b", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(0).click("c", this.zeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
+            
             // Setup unzeroing G92 - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(1).click("x", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(1).click("y", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(1).click("z", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(1).click("a", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(1).click("b", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(1).click("c", this.unzeroOutAxisG92.bind(this)).prop('href', 'javascript:');;
+            
             // Setup goto Work zero - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(2).click("x", this.gotoZero.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(2).click("y", this.gotoZero.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(2).click("z", this.gotoZero.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(2).click("a", this.gotoZero.bind(this)).prop('href', 'javascript:');
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(2).click("b", this.gotoZero.bind(this)).prop('href', 'javascript:');
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(2).click("c", this.gotoZero.bind(this)).prop('href', 'javascript:');
             // Setup zeroing G10 (work) - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(3).click("mx", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(3).click("my", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(3).click("mz", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(3).click("ma", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');;
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(3).click("mb", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');;
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(3).click("mc", this.zeroOutAxisG10.bind(this)).prop('href', 'javascript:');;
+            
             // Setup goto Machine zero - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(4).click("x", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(4).click("y", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(4).click("z", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(4).click("a", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(4).click("b", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(4).click("c", this.gotoZeroM.bind(this)).prop('href', 'javascript:');
 
             // Setup homing with no limit switches - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(5).click("x", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(5).click("y", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(5).click("z", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(5).click("a", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');;
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(5).click("b", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');;
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(5).click("c", this.zeroOutAxisG28.bind(this)).prop('href', 'javascript:');;
+            
             // Setup homing with limit switches - per axis menu
             $('#com-chilipeppr-widget-xyz-x .dropdown-menu a').eq(6).click("x", this.homeAxis.bind(this)).prop('href', 'javascript:');
             $('#com-chilipeppr-widget-xyz-y .dropdown-menu a').eq(6).click("y", this.homeAxis.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-z .dropdown-menu a').eq(6).click("z", this.homeAxis.bind(this)).prop('href', 'javascript:');;
             $('#com-chilipeppr-widget-xyz-a .dropdown-menu a').eq(6).click("a", this.homeAxis.bind(this)).prop('href', 'javascript:');;
-
+            $('#com-chilipeppr-widget-xyz-b .dropdown-menu a').eq(6).click("b", this.homeAxis.bind(this)).prop('href', 'javascript:');;
+            $('#com-chilipeppr-widget-xyz-c .dropdown-menu a').eq(6).click("c", this.homeAxis.bind(this)).prop('href', 'javascript:');;
         },
         publishSend: function(gcode) {
             var jsonSend = {
@@ -1447,6 +1518,37 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             }
             $(window).trigger('resize');
         },
+        
+        isBAxisShowing: false,
+        showHideAxisB: function () {
+            var el = $('#com-chilipeppr-widget-xyz-b');
+            if (el.hasClass('hidden')) {
+                this.isBAxisShowing = true;
+                el.removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz .showhidebaxis').addClass("active");
+            } else {
+                this.isBAxisShowing = false;
+                el.addClass('hidden');
+                $('#com-chilipeppr-widget-xyz .showhidebaxis').removeClass("active");
+            }
+            $(window).trigger('resize');
+        },
+        
+        isCAxisShowing: false,
+        showHideAxisC: function () {
+            var el = $('#com-chilipeppr-widget-xyz-c');
+            if (el.hasClass('hidden')) {
+                this.isCAxisShowing = true;
+                el.removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz .showhidecaxis').addClass("active");
+            } else {
+                this.isCAxisShowing = false;
+                el.addClass('hidden');
+                $('#com-chilipeppr-widget-xyz .showhidecaxis').removeClass("active");
+            }
+            $(window).trigger('resize');
+        },
+        
         ismDROShowing: false,
         showHidemDRO: function () {
             var el = $('#com-chilipeppr-widget-xyz-mx');
