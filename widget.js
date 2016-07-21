@@ -1124,12 +1124,16 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         axisy: null,
         axisz: null,
         axisa: null,
+        axisb: null,
+        axisc: null,
         axes: {},
         //Machine coord version of axes. 
         axismx: null,
         axismy: null,
         axismz: null,
         axisma: null,
+        axismb: null,
+        axismc: null,
         setupAxes: function () {
             this.axisx = {
                 intblack: $('#com-chilipeppr-widget-xyz-x .xyz-intblack'),
