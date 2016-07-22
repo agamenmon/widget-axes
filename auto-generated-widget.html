@@ -565,7 +565,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             // see if return key
             if (evt.keyCode == 13) {
                 console.log("enter key hit");
-                
                 // send gcode
                 var gcode = "G90 G0 " + axis + tgtEl.val();
                 console.log("about to send gcode:", gcode);
