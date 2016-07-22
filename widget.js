@@ -1237,7 +1237,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
-                console.dir(axes.b);
                 this.updateAxis("b", axes.b);
             }
             if ('c' in axes && axes.c !== null) {
@@ -1245,6 +1244,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             }
             if ('mpo' in axes) {
                 axes = axes.mpo;
+                console.dir(axes);
                 var scale = 0;
                 if (this.currentUnits == 'mm') scale = 1;
                 if (this.currentUnits == 'inch') scale = 1 / 25.4;
