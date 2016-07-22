@@ -1659,7 +1659,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         isInCustomMenu: false,
         customMenuSetVal: function (itemNum) {
             console.log("setting custom val from itemNum:", itemNum);
-            if (itemNum instanceof Object) itemNum = itemNum.data; // convert evt obj to just the data
+            if (itemNum instanceof ABC) itemNum = itemNum.data; // convert evt obj to just the data
             var cls = ".jogincrCustomInput" + itemNum;
             var inputEl = $('#com-chilipeppr-widget-xyz-ftr ' + cls);
             var val = parseFloat(inputEl.val());
