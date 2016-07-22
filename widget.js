@@ -1208,8 +1208,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 decimal: $('#com-chilipeppr-widget-xyz-mc .xyz-decimal')
             };
             this.axes = {
-                //x: this.axisx,
-                //y: this.axisy,
+                x: this.axisx,
+                y: this.axisy,
                 z: this.axisz,
                 a: this.axisa,
                 b: this.axisb,
@@ -1285,7 +1285,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             mc: 0
         },
         updateAxis: function (axis, val) {
-            console.dir(axis);
+            console.dir(this.axes[axis]);
             console.dir(val);
             console.log('updateAxis. axis:', axis, 'val:', val);
             var ax = this.axes[axis];
