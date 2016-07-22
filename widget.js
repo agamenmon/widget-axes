@@ -1223,29 +1223,23 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             };
         },
         updateAxesFromStatus: function (axes) {
-            
+            console.log('updateAxesFromStatus:', axes);
             if ('x' in axes && axes.x !== null) {
-                console.dir(axes);
                 this.updateAxis("x", axes.x);
             }
             if ('y' in axes && axes.y !== null) {
-                console.dir(axes);
                 this.updateAxis("y", axes.y);
             }
             if ('z' in axes && axes.z !== null) {
-                console.dir(axes);
                 this.updateAxis("z", axes.z);
             }
             if ('a' in axes && axes.a !== null) {
-                console.dir(axes);
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
-                console.dir(axes);
                 this.updateAxis("b", axes.b);
             }
             if ('c' in axes && axes.c !== null) {
-                console.dir(axes);
                 this.updateAxis("c", axes.c);
             }
             if ('mpo' in axes) {
