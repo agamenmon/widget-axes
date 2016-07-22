@@ -211,7 +211,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             this.toolbarSetup();
 
             // Subscribe to the signal published from the specific controller implementing the generic interface
-            // for CNC controllers that normalizes the XYZ Axis updates so we don't have to worry about
+            // for CNC controllers that normalizes the XYZABC Axis updates so we don't have to worry about
             // the specific implementation
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
 
@@ -1224,8 +1224,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             };
         },
         updateAxesFromStatus: function (axes) {
-            console.log("updateAxesFromStatus:", axes);
-            console.log("-------------AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             console.dir(axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
@@ -1430,9 +1428,11 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 if (this.isAAxisShowing) {
                     cmd += " A0";
                 }
+                // if a axis showing
                 if (this.isBAxisShowing) {
                     cmd += " B0";
                 }
+                // if a axis showing
                 if (this.isCAxisShowing) {
                     cmd += " C0";
                 }
@@ -1613,12 +1613,18 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 $('#com-chilipeppr-widget-xyz-mx').removeClass('hidden');
                 $('#com-chilipeppr-widget-xyz-my').removeClass('hidden');
                 $('#com-chilipeppr-widget-xyz-mz').removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz-ma').removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz-mb').removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz-mc').removeClass('hidden');
                 $('#com-chilipeppr-widget-xyz .showhidemDRO').addClass("active");
             } else {
                 this.ismDROShowing = false;
                 $('#com-chilipeppr-widget-xyz-mx').addClass('hidden');
                 $('#com-chilipeppr-widget-xyz-my').addClass('hidden');
                 $('#com-chilipeppr-widget-xyz-mz').addClass('hidden');
+                $('#com-chilipeppr-widget-xyz-ma').addClass('hidden');
+                $('#com-chilipeppr-widget-xyz-mb').addClass('hidden');
+                $('#com-chilipeppr-widget-xyz-mc').addClass('hidden');
                 $('#com-chilipeppr-widget-xyz .showhidemDRO').removeClass("active");
             }
             $(window).trigger('resize');
@@ -1680,9 +1686,15 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             $('#com-chilipeppr-widget-xyz-ftr .jogx').click("X+", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogy').click("Y+", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogz').click("Z+", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .joga').click("A+", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .jogb').click("B+", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .jogc').click("C+", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogxneg').click("X-", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogyneg').click("Y-", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogzneg').click("Z-", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .joganeg').click("A-", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .jogbneg').click("B-", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .jogcneg').click("C-", this.jogBtn.bind(this));
 
             //gotoZero
             $('#com-chilipeppr-widget-xyz-ftr .joggotozerow').click("xyz", this.gotoZero.bind(this));
