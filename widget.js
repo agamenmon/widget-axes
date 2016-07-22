@@ -1234,6 +1234,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 this.updateAxis("z", axes.z);
             }
             if ('a' in axes && axes.a !== null) {
+                console.dir(axes);
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
