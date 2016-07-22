@@ -454,7 +454,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             // Subscribe to the signal published from the specific controller implementing the generic interface
             // for CNC controllers that normalizes the XYZABC Axis updates so we don't have to worry about
             // the specific implementation
-            chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
+            chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus(axes));
 
             // Update units if we get a notification published to us
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/units", this, this.updateUnitsFromStatus);
@@ -1360,16 +1360,16 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             }
         },
 
-        //axisx: null,
-        //axisy: null,
+        axisx: null,
+        axisy: null,
         axisz: null,
         axisa: null,
         axisb: null,
         axisc: null,
-        //axes: {},
+        axes: {},
         //Machine coord version of axes. 
-        //axismx: null,
-        //axismy: null,
+        axismx: null,
+        axismy: null,
         axismz: null,
         axisma: null,
         axismb: null,
