@@ -1260,6 +1260,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     this.updateAxis("ma", this.round(axes.a * scale, 4));
                 }
                 if ('b' in axes && axes.b !== null) {
+                    console.dir(axes.b);
                     this.updateAxis("mb", this.round(axes.b * scale, 4));
                 }
                 if ('c' in axes && axes.c !== null) {
