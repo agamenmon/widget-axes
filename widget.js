@@ -2107,6 +2107,31 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 xyz = "Z";
                 val = -1 * baseval; //0.001;
             }
+            else if (key == "A+") {
+                // page up. A+
+                xyz = "A";
+                val = baseval; //0.001;
+            } else if (key == "A-") {
+                // page down. A-
+                xyz = "A";
+                val = -1 * baseval; //0.001;
+            }else if (key == "B+") {
+                // page up. B+
+                xyz = "B";
+                val = baseval; //0.001;
+            } else if (key == "B-") {
+                // page down. B-
+                xyz = "B";
+                val = -1 * baseval; //0.001;
+            }else if (key == "C+") {
+                // page up. C+
+                xyz = "C";
+                val = baseval; //0.001;
+            } else if (key == "C-") {
+                // page down. C-
+                xyz = "C";
+                val = -1 * baseval; //0.001;
+            }
             val = val * mult;
 
             if (xyz.length > 0) {
