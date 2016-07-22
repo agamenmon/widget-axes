@@ -1223,7 +1223,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             };
         },
         updateAxesFromStatus: function (axes) {
-            console.dir(axes);
+            //console.dir(axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
@@ -1260,7 +1260,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     this.updateAxis("ma", this.round(axes.a * scale, 4));
                 }
                 if ('b' in axes && axes.b !== null) {
-                    console.dir(axes.b);
                     this.updateAxis("mb", this.round(axes.b * scale, 4));
                 }
                 if ('c' in axes && axes.c !== null) {
@@ -1285,7 +1284,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             mc: 0
         },
         updateAxis: function (axis, val) {
-            console.dir(axis,val);
             console.log("updateAxis. axis:", axis, "val:", val);
             var ax = this.axes[axis];
             var axl = this.lastVal[axis];
