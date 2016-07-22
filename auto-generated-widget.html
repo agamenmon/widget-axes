@@ -1525,6 +1525,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             mc: 0
         },
         updateAxis: function (axis, val) {
+            console.dir(axis,val);
             console.log("updateAxis. axis:", axis, "val:", val);
             var ax = this.axes[axis];
             var axl = this.lastVal[axis];
