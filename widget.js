@@ -1125,10 +1125,10 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         axisa: null,
         axisb: null,
         axisc: null,
-        axes: {},
+        //axes: {},
         //Machine coord version of axes. 
-        axismx: null,
-        axismy: null,
+        //axismx: null,
+        //axismy: null,
         axismz: null,
         axisma: null,
         axismb: null,
