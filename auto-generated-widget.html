@@ -560,7 +560,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             var tgtEl = $(evt.currentTarget);
             var posEl = tgtEl.parents('.com-chilipeppr-xyz-pos-well');
             var axis = posEl.data('axis').toUpperCase();
-            console.dir(axis);
+            //console.dir(axis);
             console.log("axis:", axis);
             // see if return key
             if (evt.keyCode == 13) {
@@ -1464,7 +1464,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             };
         },
         updateAxesFromStatus: function (axes) {
-            //console.dir(axes);
+            console.dir(axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
