@@ -319,8 +319,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             var tgtEl = $(evt.currentTarget);
             var posEl = tgtEl.parents('.com-chilipeppr-xyz-pos-well');
             var axis = posEl.data('axis').toUpperCase();
+            console.dir(axis);
             console.log("axis:", axis);
-            
             // see if return key
             if (evt.keyCode == 13) {
                 console.log("enter key hit");
