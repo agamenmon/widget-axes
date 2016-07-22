@@ -1208,8 +1208,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 decimal: $('#com-chilipeppr-widget-xyz-mc .xyz-decimal')
             };
             this.axes = {
-                x: this.axisx,
-                y: this.axisy,
+                //x: this.axisx,
+                //y: this.axisy,
                 z: this.axisz,
                 a: this.axisa,
                 b: this.axisb,
