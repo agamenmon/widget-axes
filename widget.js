@@ -1913,6 +1913,30 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                     // page down
                     direction = "Z-";
                     $('#com-chilipeppr-widget-xyz-ftr .jogzneg').addClass("hilite");
+                }else if (key == 87) {
+                    // page up
+                    direction = "B+";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogb').addClass("hilite");
+                } else if (key == 83) {
+                    // page down
+                    direction = "B-";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogbneg').addClass("hilite");
+                }else if (key == 65) {
+                    // page up
+                    direction = "A+";
+                    $('#com-chilipeppr-widget-xyz-ftr .joga').addClass("hilite");
+                } else if (key == 68) {
+                    // page down
+                    direction = "A-";
+                    $('#com-chilipeppr-widget-xyz-ftr .joganeg').addClass("hilite");
+                }else if (key == 81) {
+                    // page up
+                    direction = "C+";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogc').addClass("hilite");
+                } else if (key == 69) {
+                    // page down
+                    direction = "C-";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogcneg').addClass("hilite");
                 }
 
                 if (direction) {
@@ -1960,6 +1984,30 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 } else if (key == 34) {
                     // page down
                     $('#com-chilipeppr-widget-xyz-ftr .jogzneg').removeClass("hilite");
+                }else if (key == 87) {
+                    // page up
+                    direction = "B+";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogb').addClass("hilite");
+                } else if (key == 83) {
+                    // page down
+                    direction = "B-";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogbneg').addClass("hilite");
+                }else if (key == 65) {
+                    // page up
+                    direction = "A+";
+                    $('#com-chilipeppr-widget-xyz-ftr .joga').addClass("hilite");
+                } else if (key == 68) {
+                    // page down
+                    direction = "A-";
+                    $('#com-chilipeppr-widget-xyz-ftr .joganeg').addClass("hilite");
+                }else if (key == 81) {
+                    // page up
+                    direction = "C+";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogc').addClass("hilite");
+                } else if (key == 69) {
+                    // page down
+                    direction = "C-";
+                    $('#com-chilipeppr-widget-xyz-ftr .jogcneg').addClass("hilite");
                 }
 
                 that.lastKeydownTime = 0;
