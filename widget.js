@@ -1,6 +1,6 @@
 // Test this element. This code is auto-removed by the chilipeppr.load()
 cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
-    console.log("test running of " + xyz.id);
+    console.log('test running of ' + xyz.id);
     //sp.init("192.168.1.7");
     //xyz.initAs3dPrinting();
     xyz.init();
@@ -261,7 +261,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             this.setupShowHideTouchBtn();
             this.setupShowHideWcsBtn();
             var that = this;
-            console.log(this.name + " done loading.");
+            console.log(this.name +  'done loading.');
         },
         pencilSetup: function() {
             // add mouseover events to DRO numbers
@@ -275,7 +275,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
 			$('#com-chilipeppr-widget-xyz-c').hover(this.pencilOnMouseover.bind(this), this.pencilOnMouseout.bind(this));
         },
         pencilOnMouseover: function(evt) {
-            console.log("got pencilOnMouseover. evt:", evt);
+            console.log('got pencilOnMouseover. evt:', evt);
             var tgtEl = $(evt.currentTarget);
             var btn = $('<button class="btn btn-xs btn-default xyz-pencil"><span class="glyphicon glyphicon-pencil"></span></button>');
             btn.click(this.pencilClick.bind(this));
@@ -293,7 +293,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             });
         },
         pencilOnMouseout: function(evt) {
-            console.log("got pencilOnMouseout. evt:", evt);
+            console.log('got pencilOnMouseout. evt:', evt);
             var tgtEl = $(evt.currentTarget);
             this.pencilHide(tgtEl);
         },
@@ -320,13 +320,13 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             var posEl = tgtEl.parents('.com-chilipeppr-xyz-pos-well');
             var axis = posEl.data('axis').toUpperCase();
             //console.dir(axis);
-            console.log("axis:", axis);
+            console.log('axis:', axis);
             // see if return key
             if (evt.keyCode == 13) {
                 console.log("enter key hit");
                 // send gcode
                 var gcode = "G90 G0 " + axis + tgtEl.val();
-                console.log("about to send gcode:", gcode);
+                console.log('about to send gcode: ', gcode);
                 chilipeppr.publish('/com-chilipeppr-widget-serialport/jsonSend', {
                     D: gcode, 
                     Id:"axes" + this.pencilCtr++
@@ -341,7 +341,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             
         },
         pencilHide: function(tgtEl) {
-        		console.log("pencilHide");
+        		console.log('pencilHide');
         		// hide popover
           tgtEl.find('button').popover('hide');
             //tgtEl.popover('hide');
@@ -1224,6 +1224,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         },
         updateAxesFromStatus: function (axes) {
             console.dir(axes);
+            console.log(axes);
+            console.dir(axes.mpo);
             console.dir(axes.mpo);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
