@@ -2081,7 +2081,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
 
             // adjust feedrate relative to acceleration
             //feedrate = feedrate * ((this.accelBaseval / this.baseval) / 2);
-
+            console.dir(direction);
             if (key == "Y+") {
                 // up arrow. Y+
                 xyz = "Y";
