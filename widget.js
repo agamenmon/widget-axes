@@ -35,17 +35,17 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 x: 0.005,
                 y: 10.46,
                 z: 0.304,
-                a: 0,
-                b: 0,
-                c: 0,
+                a: 1,
+                b: 2,
+                c: 3,
                 type: "work",
                 mpo: {
                     x: 0.005,
                     y: 10.46,
                     z: 0.304,
-                    a: 0,
-                    b: 0,
-                    c: 0,
+                    a: 2,
+                    b: 3,
+                    c: 4,
                     type: "machine"
                 }
             });
@@ -55,9 +55,9 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 x: 192,
                 y: 0.028,
                 z: 0.01,
-                a: 0,
-                b: 0,
-                c: 0,
+                a: 3,
+                b: 4,
+                c: 5,
                 type: "work"
             });
         }, 2000);
@@ -66,9 +66,9 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 x: -3288.73,
                 y: -0,
                 z: 1.12,
-                a: null,
-                b: null,
-                c: null,
+                a: 25,
+                b: 12,
+                c: 35,
                 type: "work"
             });
         }, 3000);
@@ -76,11 +76,11 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-interface-cnccontroller/axes", {
                 x: 940.5744,
-                y: null,
+                y: 14,
                 z: 1.12,
-                a: null,
-                b: null,
-                c: null,
+                a: 34,
+                b: 56,
+                c: 47,
                 type: "work"
             });
         }, 4000);
@@ -89,20 +89,20 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
                 x: 0.574,
                 y: 32.424,
                 z: -3.424,
-                a: null,
-                b: null,
-                c: null,
+                a: 87,
+                b: 98,
+                c: 12,
                 type: "work"
             });
         }, 5000);
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-interface-cnccontroller/axes", {
-                x: null,
+                x: 12,
                 y: 132.424,
                 z: -3.424,
-                a: null,
-                c: null,
-                b: null,
+                a: 14,
+                c: 12,
+                b: 58,
                 type: "work"
             });
         }, 5000);
@@ -1225,6 +1225,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         },
         updateAxesFromStatus: function (axes) {
             console.dir(axes);
+            console.log("---------------------------------------");
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
@@ -1238,7 +1239,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
-                console.log("---------------------------------------------");
                 this.updateAxis("b", axes.b);
             }
             if ('c' in axes && axes.c !== null) {
