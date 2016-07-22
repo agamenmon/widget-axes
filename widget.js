@@ -348,7 +348,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             tgtEl.find('.xyz-pencil').remove();
             tgtEl.find('.xyz-number').remove();
         },
-        initAs3dPrinting: function () {
+        /*initAs3dPrinting: function () {
             // by default we'll show the A/B/C axes
             $('#com-chilipeppr-widget-xyz-a').removeClass("hidden");
             $('#com-chilipeppr-widget-xyz-b').removeClass("hidden");
@@ -362,7 +362,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             $('#com-chilipeppr-widget-xyz-b .com-chilipeppr-xyz-dim').text("mm");
             $('#com-chilipeppr-widget-xyz-c .com-chilipeppr-xyz-dim').text("mm");
 
-        },
+        },*/
         setupShowHideWcsBtn: function () {
 
             var btnEl = $("#com-chilipeppr-widget-xyz .btnToggleShowWcs");

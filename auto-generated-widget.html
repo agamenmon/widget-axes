@@ -11,7 +11,7 @@
 
     <!-- Customized version of require.js for ChiliPeppr. Please see require.js docs for how
     ChiliPeppr's dependency system works as it's based on require.js. -->
-    <script type='text/javascript' src="//i2dcui.appspot.com/js/require.js"></script>
+    <script type='text/javascript' src="com//i2dcui.appspot.com/js/require.js"></script>
 
     <style type='text/css'>
 #com-chilipeppr-widget-xyz-body {
@@ -589,7 +589,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             tgtEl.find('.xyz-pencil').remove();
             tgtEl.find('.xyz-number').remove();
         },
-        initAs3dPrinting: function () {
+        /*initAs3dPrinting: function () {
             // by default we'll show the A/B/C axes
             $('#com-chilipeppr-widget-xyz-a').removeClass("hidden");
             $('#com-chilipeppr-widget-xyz-b').removeClass("hidden");
@@ -603,7 +603,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             $('#com-chilipeppr-widget-xyz-b .com-chilipeppr-xyz-dim').text("mm");
             $('#com-chilipeppr-widget-xyz-c .com-chilipeppr-xyz-dim').text("mm");
 
-        },
+        },*/
         setupShowHideWcsBtn: function () {
 
             var btnEl = $("#com-chilipeppr-widget-xyz .btnToggleShowWcs");
