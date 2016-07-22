@@ -1238,6 +1238,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
+                console.log("---------------------------------------------");
                 this.updateAxis("b", axes.b);
             }
             if ('c' in axes && axes.c !== null) {
