@@ -1223,7 +1223,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             };
         },
         updateAxesFromStatus: function (axes) {
-            console.dir(axes);
+            
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
@@ -1237,6 +1237,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
                 this.updateAxis("a", axes.a);
             }
             if ('b' in axes && axes.b !== null) {
+                console.dir(axes);
                 this.updateAxis("b", axes.b);
             }
             if ('c' in axes && axes.c !== null) {
