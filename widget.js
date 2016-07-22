@@ -1119,8 +1119,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             }
         },
 
-        axisx: null,
-        axisy: null,
+        //axisx: null,
+        //axisy: null,
         axisz: null,
         axisa: null,
         axisb: null,
